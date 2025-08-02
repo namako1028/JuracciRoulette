@@ -22,7 +22,8 @@ export async function execute(interaction) {
     "<:nansuu:1267080374777937930>",
     "<:aramaki_kuN:1300445192498970655>",
     "<:lonely_kuN:1300445000785723463>",
-    "<:gekiatuwaya:1316024166075600977>"
+    "<:gekiatuwaya:1316024166075600977>",
+    "<:bluewaya:1361285095054508294>",
   ];
   for(let i = 0; i < 3 ; i++) {
     const random = Math.floor(Math.random() * arr.length);
