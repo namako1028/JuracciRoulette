@@ -1,6 +1,5 @@
 // 1. HTTPモジュールのインポート
-import { createRequire } from 'module';
-const http = require('http');
+import http from 'node:http';
 
 // 2. サーバーがリッスンするポート
 // Koyebのヘルスチェックが8000番ポートを使用しているため、8000を指定します。
