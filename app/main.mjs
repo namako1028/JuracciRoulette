@@ -1,4 +1,5 @@
 // 1. HTTPモジュールのインポート
+import { createRequire } from 'module';
 const http = require('http');
 
 // 2. サーバーがリッスンするポート
