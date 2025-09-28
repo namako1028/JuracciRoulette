@@ -1,3 +1,30 @@
+// 1. HTTPモジュールのインポート
+const http = require('http');
+
+// 2. サーバーがリッスンするポート
+// Koyebのヘルスチェックが8000番ポートを使用しているため、8000を指定します。
+const PORT = process.env.PORT || 8000;
+
+// 3. Webサーバーの作成
+const server = http.createServer((req, res) => {
+    // ヘルスチェックのレスポンス
+    if (req.url === '/health' || req.url === '/') {
+        res.statusCode = 200; // 成功を示すステータスコード
+        res.setHeader('Content-Type', 'text/plain');
+        res.end('Bot is running and healthy!'); // 応答メッセージ
+    } else {
+        // その他のリクエストは404を返す
+        res.statusCode = 404;
+        res.end('Not Found');
+    }
+});
+
+// 4. サーバーを指定のポートで起動
+server.listen(PORT, '0.0.0.0', () => {
+    // ログを出力して、サーバーが起動したことを確認
+    console.log(`Web server listening on port ${PORT}`);
+});
+
 import fs from "fs";
 import path from "path";
 import express from "express";
